@@ -7,7 +7,7 @@
  
     ---------------------------------------------------------------------
   Notes: (ie: To be fixed, I Need Help With, Clarify This, etc etc: )
-     (1)
+     (1) I need help with creating loops for hair maybe?
      (2)
 **************************************************************************/
 var gDebugMode = true;
@@ -36,6 +36,7 @@ function draw() {
   drawBrows();
   drawMouth();
   drawHairStrands();
+  drawCoat();
 
   // Debug mode
   if( gDebugMode == true ){
@@ -127,8 +128,8 @@ function drawHair() { // Hair
   fill(0);
   noStroke();
   bezier(654, 70, 571, 56, 426, 68, 409, 219);
-  bezier(635, 72, 647, 120, 715, 279, 830, 340); 
-  bezier(633, 71, 656, 113, 659, 324, 791, 333);
+  bezier(635, 72, 647, 120, 715, 279, 808, 337); 
+  bezier(633, 71, 712, 222, 782, 310, 838, 343);
   bezier(634, 70, 701, 67, 827, 92, 830, 338);
 }
 
@@ -163,6 +164,20 @@ function drawMouth() { // Mouth
   bezier(487, 457, 501, 459, 544, 442, 548, 439); // lower lip line
 }
 
+function drawCoat() {
+  noStroke();
+  fill(187, 122, 48);
+  quad(521, 543, 534, 784, 460, 774, 436, 606); // shoulder collar base
+  quad(440, 602, 368, 635, 397, 734, 461, 771);
+  fill(164, 112, 20); 
+  quad(521, 543, 616, 746, 627, 844, 457, 748); // coat collar base
+  noFill(0);
+  strokeWeight(7);
+  stroke(141, 99, 20);
+  bezier(517, 539, 490, 592, 446, 590, 369, 633); // coat collar outline
+  bezier(367, 634, 348, 649, 339, 716, 459, 769);
+}
+
 function drawHairStrands() {
   noFill(0);
   strokeWeight(7);
@@ -171,4 +186,6 @@ function drawHairStrands() {
   bezier(633, 69, 473, 101, 445, 158, 400, 274); // strand 1
   bezier(791, 332, 812, 353, 801, 488, 719, 548);
   bezier(717, 550, 673, 604, 689, 720, 711, 790); // strand 2
+  bezier(638, 74, 691, 167, 790, 307, 850, 349);
+  bezier(638, 74, 674, 126, 757, 284, 910, 306); 
 }
