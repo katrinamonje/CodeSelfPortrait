@@ -34,6 +34,7 @@ function draw() {
   drawCheeks();
   drawHair();
   drawBrows();
+  drawMouth();
 
   // Debug mode
   if( gDebugMode == true ){
@@ -111,10 +112,10 @@ function drawCheeks() { // Cheeks
 function drawHair() { // Hair
   noFill(0);
   strokeWeight(7);
-  stroke(50);
+  stroke(0);
   bezier(633, 69, 571, 81, 471, 145, 410, 228); // left strand
   fill(0);
-  stroke(50);
+  noStroke();
   bezier(635, 72, 647, 120, 715, 279, 830, 340); 
   bezier(633, 71, 656, 113, 659, 324, 791, 333);
   bezier(791, 332, 812, 353, 790, 467, 719, 548);
@@ -127,4 +128,27 @@ function drawBrows() { // Eyebrows
   stroke(0);
   bezier(593, 240, 614, 224, 658, 231, 689, 243); // right brow
   bezier(457, 230, 444, 217, 415, 230, 405, 239); // left brow
+}
+
+function drawMouth() { // Mouth
+  fill(255, 145, 146, 97);
+  noStroke();
+  arc(459, 432, 30, 20, PI, 0); // lips base
+  arc(494, 433, 49, 20, PI, 0);
+  arc(498, 436, 90, 39, 0, PI);
+  arc(490, 433, 80, 30, 0, PI);
+  strokeWeight(2);
+  stroke(255, 145, 146);
+  beginShape(); // lips outline
+  vertex(424, 430);
+  vertex(463, 423);
+  vertex(474, 426);
+  vertex(488, 421);
+  vertex(493, 421);
+  endShape();
+  noFill();
+  bezier(494, 422, 512, 428, 523, 436, 580, 442); // upper lip line
+  bezier(439, 428, 454, 443, 470, 451, 487, 457);
+  bezier(439, 429, 471, 434, 500, 443, 548, 438); // middle line
+  bezier(487, 457, 501, 459, 544, 442, 548, 439); // lower lip line
 }
