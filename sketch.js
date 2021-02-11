@@ -8,7 +8,7 @@
     ---------------------------------------------------------------------
   Notes: (ie: To be fixed, I Need Help With, Clarify This, etc etc: )
      (1) I need help with creating loops for hair maybe?
-     (2)
+     (2) How do I put the gradient circles in the back (function drawBackground)
 **************************************************************************/
 var gDebugMode = true;
 
@@ -37,6 +37,7 @@ function draw() {
   drawMouth();
   drawHairStrands();
   drawCoat();
+  drawBackground();
 
   // Debug mode
   if( gDebugMode == true ){
@@ -57,6 +58,16 @@ function keyTyped() {
     gDebugMode = !gDebugMode;
  }
 
+}
+
+function drawBackground() {
+  fill(255, 192, 125, 90);
+  noStroke();
+  for (var i = 8; i <= height; i += 8) {
+    for (var j = 10; j <= width; j += 20) {
+      ellipse(j + i, i, 18 - i/20.0, 18 - i/20.0);
+    }
+  }
 }
 
 function drawNeck() {
